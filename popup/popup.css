@@ -4,6 +4,8 @@ body {
   padding: 10px;
   background-color: #f4f7f6;
   color: #333;
+  animation: fadeIn 0.3s ease-out forwards;
+  opacity: 0;
 }
 .tabs {
   display: flex;
@@ -18,14 +20,19 @@ body {
   font-size: 1rem;
   margin-right: 5px;
   border-bottom: 3px solid transparent;
+  transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 }
 .tab-button.active {
-  border-bottom: 3px solid #007bff;
+  border-bottom-color: #007bff;
   font-weight: bold;
   color: #007bff;
 }
+.tab-button:hover:not(.active){
+  color: #0056b3;
+}
 .tab-content {
   display: none;
+  animation: fadeIn 0.4s ease-out forwards;
 }
 .tab-content.active {
   display: block;
@@ -36,25 +43,26 @@ table {
   margin-bottom: 15px;
 }
 th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  word-break: break-all;
+}
+th {
   background-color: #e9ecef;
   font-weight: bold;
 }
-.actions button {
-  margin-right: 5px;
-  padding: 4px 8px;
-  font-size: 0.9rem;
-  cursor: pointer;
+.actions button:hover, .add-entry-form button:hover, .controls button:hover {
+  transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
 }
-.edit-btn {
-  background-color: #ffc107;
-  border: none;
-  color: #212529;
+.actions button:hover, .add-entry-form button:hover, .controls button:hover {
+  opacity: 0.9;
 }
-.delete-btn {
-  background-color: #dc3545;
-  border: none;
-  color: white;
+.actions button:active, .add-entry-form button:active, .controls button:active {
+  transform: scale(0.97);
 }
+.edit-btn { background-color: #ffc107; border: none; color: #212529;}
+.delete-btn { background-color: #dc3545; border: none; color: white;}
 .add-entry-form, .controls {
   margin-bottom: 15px;
   padding: 10px;
