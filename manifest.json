@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Storage Explorer",
+    "version": "1.0",
+    "description": "Easily view, edit, and manage localStorage and sessionStorage for the current page.",
+    "permissions": [
+        "activeTabs",
+        "storage",
+        "scripting"
+    ],
+    "host_permissions":[
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {}
+    },
+    "icons": {
+
+    },
+    "options_page": "options/options.html"
+}
