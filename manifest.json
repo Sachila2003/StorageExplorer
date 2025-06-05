@@ -4,22 +4,28 @@
     "version": "1.0",
     "description": "Easily view, edit, and manage localStorage and sessionStorage for the current page.",
     "permissions": [
-        "activeTabs",
+        "activeTab",
         "storage",
         "scripting"
     ],
     "host_permissions":[
-        "<all_urls>"
+        "<all_urls>" 
     ],
     "background": {
         "service_worker": "background.js"
     },
     "action": {
-        "default_popup": "popup.html",
-        "default_icon": {}
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+          "16":"icons/data-storage16.png",
+          "64":"icons/data-storage64.png",  
+          "128":"icons/data-storage128.png"
+        }
     },
     "icons": {
-
+        "16":"icons/data-storage16.png",
+        "64":"icons/data-storage64.png", 
+        "128":"icons/data-storage128.png"
     },
-    "options_page": "options/options.html"
+    "options_page": "options/option.html"
 }

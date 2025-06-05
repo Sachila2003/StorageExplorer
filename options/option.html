@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Explorer Options</title>
+</head>
+<body>
+    <h1>Storage Explorer - Option</h1>
+
+    <div class="option-group">
+        <h3>Popup Settings</h3>
+        <label for="defaultTab">default active tab on popup open</label>
+        <select id="defaultTab">
+            <option value="localStorage">localStorage</option>
+            <option value="sessionStorage">sessionStorage</option>
+        </select>
+    </div>
+    <div class="option-group">
+        <h3>Data Display</h3>
+        <label for="valuePreviewLength">Value preview length(characters):</label>
+        <input type="number" id="valuePreviewLength" min="10" max="500" value="100">
+    </div>
+    <div class="option-group">
+        <h3>Confirmations</h3>
+        <label>
+            <input type="checkbox" id="confirmDeleteEntry"> Confirm before deleting a single entry
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" id="confirmClearAll">Confirm before clearing all entries for a storage type
+        </label>
+    </div>
+    <button id="saveOptions">Save options</button>
+    <div id="status"></div>
+    <script src="option.js"></script>
+</body>
+</html>

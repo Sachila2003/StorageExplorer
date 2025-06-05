@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Storage Explorer</title>
-    <link rel="stylesheet" href="popup.css">
-    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="popup.css"> 
+    <link rel="stylesheet" href="animation.css"> 
 </head>
 
 <body>
     <h1>Web Storage Manager</h1>
     <div class="tabs">
         <button class="tab-button active" data-tab="localStorage">LocalStorage</button>
-        <button class="tab-button" data-tab="sessinStorage">SessionStorage</button>
+        <button class="tab-button" data-tab="sessionStorage">SessionStorage</button> 
     </div>
 
-    <div class="localStorageContent" class="tab-contect active">
+    <!-- LocalStorage Content -->
+    <div id="localStorageContent" class="tab-content active">
         <h2>LocalStorage Entries</h2>
         <div class="add-entry-form" data-storage-type="localStorage">
             <h3>Add New Entry</h3>
@@ -24,7 +25,7 @@
             <input type="text" class="new-value" placeholder="Value">
             <button class="add-btn">Add to LocalStorage</button>
         </div>
-        <table>
+        <table id="localStorageTable">
             <thead>
                 <tr>
                     <th>Key</th>
@@ -35,27 +36,29 @@
             <tbody>
                 <!-- inserted by js -->
             </tbody>
-            <div class="controls">
-                <button id="refreshLocalStorage">Refresh LocalStorage</button>
-                <button id="clearLocalStorage">Clear LocalStorage</button>
-            </div>
         </table>
+        <div class="controls">
+            <button id="refreshLocalStorage">Refresh LocalStorage</button>
+            <button id="clearLocalStorage">Clear LocalStorage</button>
+        </div>
     </div>
 
-    <!-- SessionStorage content -->
-    <div id="SessionStorageContent" class="tab-contect">
+    <!-- SessionStorage Content -->
+    <div id="sessionStorageContent" class="tab-content">
         <h2>SessionStorage Entries</h2>
-        <div class="add-entry-form" data-storage-type="sessinStorage">
+        <div class="add-entry-form" data-storage-type="sessionStorage">
             <h3>Add New Entry</h3>
             <input type="text" class="new-key" placeholder="Key">
             <input type="text" class="new-value" placeholder="Value">
             <button class="add-btn">Add to SessionStorage</button>
         </div>
-        <table id="sessinStorageTable">
+        <table id="sessionStorageTable">
             <thead>
-                <th>Key</th>
-                <th>Value</th>
-                <th>Actions</th>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                    <th>Actions</th>
+                </tr>
             </thead>
             <tbody>
                 <!-- inserted by js -->
@@ -69,5 +72,4 @@
 
     <script src="popup.js"></script>
 </body>
-
 </html>
